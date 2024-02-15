@@ -1,0 +1,36 @@
+<launch>
+
+    <arg name="urdf_path" default="$(find robot_slider_description)/urdf/fanuc_boat.urdf.xacro"/>
+    <!--<arg name="rvizconfig_path" default="$(find fanuc_gazebo)/rviz/rviz_config.rviz"/>-->
+    <arg name="world_path" default="$(find robot_slider_description)/worlds/home.world"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_path)'" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+
+  
+
+   <arg name="world" default="empty"/>
+   <arg name="paused" default="false"/>
+   <arg name="use_sim_time" default="true"/>
+   <arg name="gui" default="true"/>
+   <arg name="headless" default="false"/>
+   <arg name="debug" default="false"/>
+
+
+   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+	    <!--<arg name="world_name" value="$(find fanuc_gazebo)/worlds/home.world"/>-->
+	    <arg name="paused" value="$(arg paused)"/>
+	    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+	    <arg name="gui" value="$(arg gui)"/>
+	    <arg name="headless" value="$(arg headless)"/>
+	    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+
+   <node name="myrobot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+	    args="-urdf -param robot_description -model fanuc -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0" />
+
+    <!--<node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(arg rvizconfig_path)"/>-->
+</launch>
+
