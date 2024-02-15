@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <link name="world"/>
+
+    <link name="boat_link">
+       <inertial> 
+                <origin    xyz="0.0029912 -0.083551 0.56051"   rpy="0 0 0" />
+                <mass value="300.98" />
+                <inertia  ixx="65.942" ixy="-0.0012689" ixz="-0.044489"
+                        iyy="74.027" iyz="-0.19476"
+                        izz="15.95" />
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/boatwithstand.dae" scale="1 1 1"/>
+            </geometry>
+            
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 -12" rpy="0 1.57 0 " />
+            <geometry>
+                <box size="30 0.5 0.3"/>
+            </geometry> 
+        </collision>
+    </link>
+   
+
+    <link name="rail_stand_link_right">
+        <inertial> 
+                <origin    xyz="0.0029912 -0.083551 0.56051"   rpy="0 0 0" />
+                <mass value="300.98" />
+                <inertia  ixx="65.942" ixy="-0.0012689" ixz="-0.044489"
+                        iyy="74.027" iyz="-0.19476"
+                        izz="15.95" />
+        </inertial>
+
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/rail_stand.dae" scale="1 1 1"/>
+            </geometry>
+            
+        </visual>
+        <collision>
+            <origin xyz="0.7 0.125 -12" rpy=" 0 1.57 0.0" />
+            <geometry>
+              <box size="30 0.25 1.3"/> 
+            </geometry>
+        </collision>
+    </link>
+
+    
+    <joint name="boat_world_joint" type="fixed">
+        <parent link="world" />
+        <child link = "boat_link" />
+        <origin xyz="0 0 0" rpy="1.57 0.0 0" />
+    </joint>
+
+    <joint name="rail_stand_right_world_joint" type="fixed">
+        <parent link="world" />
+        <child link = "rail_stand_link_right" />
+        <origin xyz="1.2 0 0" rpy="1.57 0.0 0" />
+    </joint>
+
+   <xacro:include filename="Robotstand.xacro"/>
+
+    <joint name="slider_link_rail_stand_right_joint" type="prismatic">
+        <parent link="rail_stand_link_right" />
+        <child link = "slider_link" />
+        <origin xyz="0 0 0" rpy="-1.57 0.0 0" />
+        <axis xyz="0.0 1 0.0"/>
+        <limit lower="-1.8" upper="21" effort="3" velocity="2"/>
+    </joint>
+
+</robot>

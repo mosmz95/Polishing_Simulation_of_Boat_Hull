@@ -1,0 +1,18 @@
+<launch>
+  <arg name="urdf_path" default="$(find robot_slider_description)/urdf/fanuc_boat.urdf.xacro" />
+  
+  <arg name="rvizconfig_path" default="$(find robot_slider_description)/rviz/rviz_config.rviz"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_path)'" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+
+  <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" />
+
+  <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(arg rvizconfig_path)" />
+      
+  
+</launch>
+
+<!--rosrun xacro xacro `rospack find fanuc_gazebo`/urdf/fanuc_boat.urdf.xacro -o pr2.urdf-->
+

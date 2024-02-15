@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+
+    <link name="base_link">
+        <inertial>
+            <mass value="1.584994"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/base_link.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="RED">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/base_link.stl" scale="1 1 1" />
+            </geometry>
+        </collision>
+    </link>
+
+
+
+
+
+    <joint name="joint_1" type="revolute">
+        <parent link="base_link" />
+        <child link = "link_1" />
+        <origin xyz="0 0 0.670" rpy="0.0 0.0 0.0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.142" upper="3.142" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+
+
+
+    <link name="link_1">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_1.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_1.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+
+    <joint name="joint_2" type="revolute">
+        <parent link="link_1" />
+        <child link = "link_2" />
+        <origin xyz="0.312 0 0" rpy="0.0 0.0 0.0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.0472" upper="1.3264" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+    <link name="link_2">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_2.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_2.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+
+    <joint name="joint_3" type="revolute">
+        <parent link="link_2" />
+        <child link = "link_3" />
+        <origin xyz="0 0 1.075" rpy="0.0 0.0 0.0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-2.303" upper="4.014" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+    <link name="link_3">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_3.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_3.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+
+    <joint name="joint_4" type="revolute">
+        <parent link="link_3" />
+        <child link = "link_4" />
+        <origin xyz="0 0 0.225" rpy="0.0 0.0 0.0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-6.28" upper="6.28" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+
+
+    <link name="link_4">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_4.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_4.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+
+    <joint name="joint_5" type="revolute">
+        <parent link="link_4" />
+        <child link = "link_5" />
+        <origin xyz="1.280 0 0" rpy="0.0 0.0 0.0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-2.181" upper="2.181" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+
+
+    <link name="link_5">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_5.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_5.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+
+
+    <joint name="joint_6" type="revolute">
+        <parent link="link_5" />
+        <child link = "link_6" />
+        <origin xyz="0.235 0 0" rpy="0.0 0.0 0.0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-6.28" upper="6.28" effort="150.0" velocity="1.5"/>
+    </joint>
+
+
+
+    <link name="link_6">
+        <inertial>
+            <mass value="0.4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_6.stl"  scale="1 1 1" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/link_6.stl"  scale="1 1 1" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+    <link name="base" />
+    <joint name="base_link-base" type="fixed">
+    <origin xyz="0 0 0.670" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+    </joint>
+
+   
+    <link name="flange" />
+    
+    <joint name="joint_6-flange" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="link_6" />
+    <child link="flange" />
+    </joint>
+
+    
+    <joint name="grinder_joint" type="fixed">
+    <origin xyz="0.35 0 0" rpy="0 0 -1.57" />
+    <parent link="flange" />
+    <child link="tool" />
+    </joint>
+
+
+
+
+
+    <link name="tool">
+        <inertial>
+            <mass value="4"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <inertia
+            ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+            iyy="0.01045" iyz="0.0002226"
+            izz="0.01817"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/Unnamed-endEffector_stependEffector.dae"  scale="1.5 1.5 1.5" />
+            </geometry>
+            <material name="voilet">
+            <color rgba="1.0 0.3 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+            <mesh filename="package://robot_slider_description/meshes/Unnamed-endEffector_stependEffector.dae"  scale="1.5 1.5 1.5" />
+            </geometry>
+            
+        </collision>
+    </link>
+
+
+    <link name="tool_face" />
+
+    <joint name="toolface_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="1.57 0 0" />
+        <parent link="tool" />
+        <child link="tool_face" />
+    </joint>
+
+
+
+
+
+
+</robot>

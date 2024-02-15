@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <transmission name="joint_1_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_1_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Transmissions  -->
+    <transmission name="joint_2_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_2_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Transmissions  -->
+    <transmission name="joint_3_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_3_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Transmissions  -->
+    <transmission name="joint_4_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_4_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Transmissions  -->
+    <transmission name="joint_5_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_5_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Transmissions  -->
+    <transmission name="joint_6_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_6_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="prismatic_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="slider_link_rail_stand_right_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="prismatic_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="robot_stand_slider_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="robot_stand_slider_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="robot_stand_slider_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <!-- Gazebo colors -->
+    <gazebo reference="base_link">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="link_1">
+        <material>Gazebo/</material>
+    </gazebo>
+
+    <gazebo reference="link_2">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_3">
+        <material>Gazebo/</material>
+    </gazebo>
+
+    <gazebo reference="link_4">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="link_5">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="link_6">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="tool">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    
+    <gazebo reference="boat_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference="rail_stand_link_right">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+     <gazebo reference="slider_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="robot_stand">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+
+    <!-- Self collision in Gazebo --> 
+    
+
+    <!-- Plugins and publishers -->
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
+
+</robot>

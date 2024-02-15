@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  
+
+
+  <link name="slider_link">
+    <inertial>
+      <origin
+        xyz="0.75 1.0487 -3.6486"  rpy="0 0 0" />
+      <mass value="1317.8" />
+      <inertia ixx="353.39"  ixy="3.9338E-12"  ixz="3.5103E-13"
+               iyy="420.06"  iyz="4.9967E-13"
+               izz="170.54" />
+      </inertial>
+    <visual>
+      <origin  xyz="0 0 0"     rpy="0 0 0" />
+      <geometry>
+        <mesh     filename="package://robot_slider_description/meshes/slider_link.STL" />
+      </geometry>
+      <material  name="">
+        <color   rgba="0.019608 0.019608 0.019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin  xyz="0 0 0"   rpy="0 0 0" />
+      <geometry>
+        <mesh   filename="package://robot_slider_description/meshes/slider_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="robot_stand">
+    <inertial> 
+      <origin    xyz="0.0029912 -0.083551 0.56051"   rpy="0 0 0" />
+      <mass value="300.98" />
+      <inertia  ixx="65.942" ixy="-0.0012689" ixz="-0.044489"
+                iyy="74.027" iyz="-0.19476"
+                izz="15.95" />
+      </inertial>
+    <visual>
+      <origin  xyz="0 0 0"  rpy="0 0 0" />
+      <geometry>
+        <mesh  filename="package://robot_slider_description/meshes/robot_stand.STL" />
+      </geometry>
+      <material name="">
+        <color  rgba="0.99608 0.99608 1 1" />
+      </material>
+    </visual>
+    <collision> 
+      <origin xyz="0 0 0"  rpy="0 0 0" />
+      <geometry>
+        <mesh  filename="package://robot_slider_description/meshes/robot_stand.STL" />
+      </geometry>           
+    </collision>
+  </link>
+
+  
+
+  <joint  name="robot_stand_slider_joint"   type="revolute">
+        <origin   xyz="0.75 3.6486 2.7"  rpy="-1.5708 0 -0.46063" />
+        <parent   link="slider_link" />
+        <child    link="robot_stand" />
+        <axis     xyz="0 1 0" />
+        <limit    lower="-${pi/4}"   upper="${pi}"    effort="1" velocity="1" />
+  </joint>
+
+
+</robot>

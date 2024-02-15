@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="fanuc" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:include filename="boat_slider.xacro"/>
+    
+    <xacro:include filename="robot_fanuc.xacro"/>
+
+    <joint name="boat_base_slider_joint" type="fixed">
+        <origin xyz="0 -0.235 -1.5" rpy="${pi/2.0} 0 0" />
+        <parent link="robot_stand" />
+        <child link="base_link" />
+    </joint>
+
+    <xacro:include filename="gazebo.xacro"/>
+
+
+</robot>
