@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robot_slider_description
+    relative_path: urdf/fanuc_boat.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/fanuc.srdf
+  CONFIG:
+    author_name: Mostafa Zarei
+    author_email: mostafazarei1995mz@gmail.com
+    generated_timestamp: 1707841700
