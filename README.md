@@ -54,28 +54,27 @@ sudo apt update
       mkdir -p robotslider_ws/src
       
       ```
-   2. Go to the source directory of the workspace and clone the repository
+  2. Go to the source directory of the workspace and clone the repository
 
-```bash
-cd robotslider_ws/src   
-git clone https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull.git
-```
+      ```bash
+      cd robotslider_ws/src   
+      git clone https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull.git
+      ```
   3. Build the workspace:
 
-```bash 
-    cd robotslider_ws
-    catkin build
-```
+    ```bash 
+        cd robotslider_ws
+        catkin build
+    ```
   4. source the created workspace in the .bashrc file:
-```bash
-    echo "source robotslider_ws/devel/setup.bash" >> ~/.bashrc
-    source ~/.bashrc
-   ```
+    ```bash
+        echo "source robotslider_ws/devel/setup.bash" >> ~/.bashrc
+        source ~/.bashrc
+    ```
 
 otherwise, it is required to source the workspace whenever a new terminal is open.
 
 ## Procedure to launch the Simulation Engines
 
-  #### Visualization:
-    The range of movement of each joint is visualized in Rviz, by changing the slide bar manually, you can see how each joint moves. 
+
   #### Simulation of robot-slider motion: 
