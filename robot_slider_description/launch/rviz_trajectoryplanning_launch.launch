@@ -1,0 +1,10 @@
+<launch>
+  
+  <arg name="rvizconfig_path" default="$(find robot_slider_description)/rviz/rviz_TrajectoryPlanning_config.rviz"/>
+
+
+  <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(arg rvizconfig_path)" />
+      
+  
+</launch>
+
