@@ -77,8 +77,12 @@ Depending on your system, it may take some time for the move_group to become rea
 ##### Trajectory planning in Rviz
 
 
-![Alt text](https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/M1.png)
-
+In this section, we briefly explain the procedure of joint trajetory planning. It is required to choose (i) a planning group, (ii) a start state (iii) a goal state. 
 
 
 <img src="https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/M1.png" alt="Alt text" width="300"/>
+
+In robot-slider mechansim, two planning goups are defined, namely "arm" and "stand", the former refers to th robot movemnet itself, and the latter refers to the linear and rotational  movements of slider-stand. 
+The start state should be recieved from the gazebo(physics engine) and the goal state should be determined by the user. To do so, click on the Joint tab, then by moving the slider, choose the desired joint poistions as a goal state.
+<img src="https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/arm_joint.png" alt="Alt text" width="300"/>
+ In the next step, switch to the planning tab and click on the "Planning" button to visulaize the movement from start state to the goal state. In the end, to see the movement on the gazeboo, click on the "execute" button. 
