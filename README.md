@@ -77,3 +77,4 @@ Depending on your system, it may take some time for the move_group to become rea
 ##### Trajectory planning in Rviz
 
 
+![Alt text](https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/M1.png)
