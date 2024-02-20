@@ -5,13 +5,13 @@
 1. Create a directory for the workspace:
 
 ```bash
-  mkdir -p robotslider_ws/src
+  mkdir robotslider_ws
 ```
 2. Go to the source directory of the workspace and clone the repository
 
 ```bash
-cd robotslider_ws/src   
-git clone https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull.git
+cd robotslider_ws   
+git clone https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull.git src
 ```
 3. Build the workspace:
 
