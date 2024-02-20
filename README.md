@@ -61,6 +61,8 @@ Gazebo software is a physics engine in which according to physical properties -l
   roslaunch robot_slider_moveit move_group.launch
 ```
 
+Depending on your system, it may take some time for the move_group to become ready to receive commands. You should see confirmation of this in the terminal "<span style="color:green;">You can start planning now!</span>"
+
 4. To do trajectory plainning graphically, launch Rviz:
 
 ```bash 
@@ -71,3 +73,7 @@ Gazebo software is a physics engine in which according to physical properties -l
 ```bash
   rosrun robot_slider_controller robotslider_command.py
 ```
+
+##### Trajectory planning in Rviz
+
+
