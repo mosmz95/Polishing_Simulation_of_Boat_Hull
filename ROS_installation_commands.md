@@ -22,3 +22,38 @@ Setup your computer to accept software from packages.ros.org.
   curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
   ```
 4. Update Debian packages:  
+
+```bash
+  sudo apt update
+```
+6. Install the full desktop version of ROS Noetic:  
+
+```bash
+  sudo apt install ros-noetic-desktop-full
+```
+7. Install the MOVEIT package, which is required for the trajectory planning of the robot.
+
+```bash
+  sudo apt install ros-noetic-moveit
+```
+8. Environment setup
+```bash
+  echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+  source ~/.bashrc
+```
+9. Dependencies for building packages:
+To install this tool and other dependencies for building ROS packages, run:  
+
+```bash
+  sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+```
+9.1. Initialize rosdep:   
+
+```bash
+  sudo apt install python3-rosdep
+```      
+now initialize rosdep:  
+
+```bash
+  sudo rosdep init rosdep update
+```
