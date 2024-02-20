@@ -125,7 +125,7 @@ Gazebo software is a physics engine in which according to physical properties -l
   roslaunch robot_slider_description rviz_trajectoryplanning_launch.launch
 ```
 
-5. if the desired joint positions are known in advance, you can edit the python file ``` robotslider_command.py``` inside robot_slider_controller package, then execute it:
+5. if the desired joint positions are known in advance, you can edit the python file  ```robotslider_command.py``` inside the  robot_slider_controller package, then execute it:
 ```bash
   rosrun robot_slider_controller robotslider_command.py
 ```
