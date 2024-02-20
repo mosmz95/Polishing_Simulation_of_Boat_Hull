@@ -16,7 +16,6 @@ git clone https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull.git src
 3. Build the workspace:
 
 ```bash 
-  cd robotslider_ws
   catkin build
 ```
 4. source the created workspace in the .bashrc file:
