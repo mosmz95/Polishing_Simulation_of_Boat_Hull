@@ -57,3 +57,7 @@ now initialize rosdep:
 ```bash
   sudo rosdep init rosdep update
 ```
+
+##### Reference
+
+1. https://wiki.ros.org/noetic/Installation/Ubuntu
