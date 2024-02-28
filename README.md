@@ -39,22 +39,22 @@ The robot-slider movement is visualized in Rviz where by changing the slide-bar 
 
 ##### Simulation of robot-slider motion: 
 
-Gazebo software is a physics engine in which according to physical properties -like mass,intertia,etc, defined in urdf file- the dynamics of robot-slider movement is simulated. In fact, gazebo is a substitution of actual robot-slider. 
+Gazebo software is a physics engine in which according to physical properties -like mass, inertia, etc, defined in urdf file- the dynamics of robot-slider movement is simulated. In fact, gazebo is a substitution of an actual robot-slider. 
 
 1. To launch the gazebo, run the following line in a new terminal:
 
 ```bash
   roslaunch robot_slider_bringup gazebo_launch.launch gui:=true
 ```
-  In case you don't want to see grafical user interface, rewrite ``` gui:=false```
+  In case you don't want to see the graphical user interface, rewrite ``` gui:=false```
 
-2. Launch the controller:
+2. Open a new terminal, and launch the controller:
 
 ```bash
   roslaunch robot_slider_controller controller.launch
 ```
 
-3. Launch the move_group which does the joint trajectory planning:  
+3. In a new terminal, launch the move_group which does the joint trajectory planning:  
 
 ```bash 
   roslaunch robot_slider_moveit move_group.launch
@@ -62,7 +62,7 @@ Gazebo software is a physics engine in which according to physical properties -l
 
 Depending on your system, it may take some time for the move_group to become ready to receive commands. You should see confirmation of this in the terminal "<span style="color:green;">You can start planning now!</span>"
 
-4. To do trajectory plainning graphically, launch Rviz:
+4. To do trajectory planning graphically, launch Rviz in a new terminal:
 
 ```bash 
   roslaunch robot_slider_description rviz_trajectoryplanning_launch.launch
@@ -76,14 +76,14 @@ Depending on your system, it may take some time for the move_group to become rea
 ##### Trajectory planning in Rviz
 
 
-In this section, we briefly explain the procedure of joint trajetory planning. It is required to choose (i) a planning group, (ii) a start state (iii) a goal state. 
+In this section, we briefly explain the procedure of joint trajectory planning. It is required to choose (i) a planning group, (ii) a start state (iii) a goal state. 
 
 <div style="text-align:center;">
 <img src="https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/M1.png" alt="Alt text" width="300"/>
 </div>
-In the robot-slider mechansim, two planning goups are defined, namely "arm" and "stand", the former refers to th robot movement itself, and the latter refers to the linear and rotational  movements of slider-stand. 
-The start state should be recieved from the gazebo(physics engine) and the goal state should be determined by the user. To do so, click on the "Joints" tab, then by moving the slider, choose the desired joint poistions as a goal state.
+In the robot-slider mechanism, two planning groups are defined, namely "arm" and "stand", the former refers to the robot movement itself, and the latter refers to the linear and rotational  movements of the slider-stand. 
+The start state should be received from the gazebo(physics engine) and the goal state should be determined by the user. To do so, click on the "Joints" tab, then by moving the slider, choose the desired joint positions as a goal state.
 <div style="text-align:center;">
 <img src="https://github.com/mosmz95/Polishing_Simulation_of_Boat_Hull/blob/master/photos/arm_joint.png" alt="Alt text" width="300"/>
 </div>
-In the next step, switch to the "Planning" tab and click on the "Planning" button to visulaize the movement from the start state to the goal state. In the end, to see the movement on the gazeboo, click on the "Execute" button. 
+In the next step, switch to the "Planning" tab and click on the "Planning" button to visualize the movement from the start state to the goal state. In the end, to see the movement on the gazeboo, click on the "Execute" button. 
